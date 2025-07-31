@@ -1,16 +1,40 @@
 <!-- views/partials/head.ejs -->
 <head>
-  <!-- Metadata -->
+  <!-- Basic Meta -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><%= title || "JobSync" %></title>
-  <meta name="author" content="JobSync" />
-  <meta name="description" content="AI-powered job search and real-time mentorship platform for daily wage workers and job seekers." />
-  <meta name="keywords" content="JobSync, job portal, AI job finder, mentorship, job matching, daily wage work, employment, smart job search" />
   <meta name="theme-color" content="#000000" />
+  
+  <!-- Dynamic Title -->
+  <title><%= typeof title !== 'undefined' ? `${title} | JobSync` : 'JobSync - AI-Powered Job Portal' %></title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="<%= typeof title !== 'undefined' ? `${title} | JobSync` : 'JobSync - AI-Powered Job Portal' %>" />
+  <meta name="author" content="JobSync" />
+  <meta name="description" content="<%= typeof description !== 'undefined' ? description : 'AI-powered job search and real-time mentorship platform for daily wage workers and job seekers.' %>" />
+  <meta name="keywords" content="<%= keywords || 'JobSync, job portal, AI job finder, mentorship, job matching, daily wage work, employment, smart job search' %>" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="<%= 'https://jobsync-new.onrender.com' + (typeof path !== 'undefined' ? path : '') %>" />
+  <meta property="og:title" content="<%= typeof title !== 'undefined' ? `${title} | JobSync` : 'JobSync - AI-Powered Job Portal' %>" />
+  <meta property="og:description" content="<%= typeof description !== 'undefined' ? description : 'AI-powered job search and real-time mentorship platform for daily wage workers and job seekers.' %>" />
+  <meta property="og:image" content="<%= image || 'https://jobsync-new.onrender.com/assets/og-image.jpg' %>" />
+  <meta property="og:site_name" content="JobSync" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="<%= 'https://jobsync-new.onrender.com' + (typeof path !== 'undefined' ? path : '') %>" />
+  <meta name="twitter:title" content="<%= typeof title !== 'undefined' ? `${title} | JobSync` : 'JobSync - AI-Powered Job Portal' %>" />
+  <meta name="twitter:description" content="<%= typeof description !== 'undefined' ? description : 'AI-powered job search and real-time mentorship platform for daily wage workers and job seekers.' %>" />
+  <meta name="twitter:image" content="<%= image || 'https://jobsync-new.onrender.com/assets/og-image.jpg' %>" />
+  <meta name="twitter:site" content="@jobsyncofficial" />
+  <meta name="twitter:creator" content="@jobsyncofficial" />
 
   <!-- Favicons -->
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon-32x32.svg" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon-192x192.svg" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180x180.png" />
@@ -18,6 +42,7 @@
   <link rel="manifest" href="/assets/site.webmanifest" />
   <meta name="msapplication-TileImage" content="/assets/favicon-192x192.png" />
   <meta name="msapplication-config" content="/assets/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#000000" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
